@@ -1,13 +1,25 @@
 ---
-title: "About"
+title: "Jordan Zhu"
 image: profile.jpg
 about:
-  template: jolla
+  template: trestles
   links:
     - icon: github
       text: Github
-      href: https://github.com/etc5523-2022
-
+      href: https://github.com/Fengz924
+    - icon: linkedin
+      text: LinkedIn   
+      href: https://www.linkedin.com/in/feng-zhu-a79a73267/
 ---
 
-This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.
+I am currently a first-year Master’s student in Business Analytics at Monash University. With a solid foundation in data analysis, I am passionate about leveraging data to solve complex business problems and optimize decision-making processes.
+
+In addition to my studies, I enjoy exploring the latest trends in technology and data science. I am particularly interested in how data analytics can drive innovation in various industries. 
+
+Outside of academics, I love hiking and exploring nature, which provides me with a fresh perspective and inspires my creativity. Photography is another passion of mine; I enjoy capturing the beauty of landscapes and urban environments. Additionally, I have a deep appreciation for diverse cultures, and I love trying out new cuisines, which allows me to connect with people from different backgrounds and learn about their traditions.
+
+## Contact
+| ![](https://img.icons8.com/ios-filled/20/000000/github.png) | [FengZhu](https://github.com/Fengz924) |
+| --- | --- |
+| ![](https://img.icons8.com/ios-filled/20/000000/mail.png) | [fzhu0011@student.monash.edu](mailto:fzhu0011@student.monash.edu) |
+| ![](https://img.icons8.com/ios-filled/20/000000/marker.png) | Monash University<br>29 Ancora Imparo Way<br>Clayton, VIC 3800<br>Australia |

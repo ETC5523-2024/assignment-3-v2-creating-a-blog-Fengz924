@@ -1,5 +1,5 @@
 ---
-title: "ETC5523 Blog Assessment"
+title: "Timing and Duration Analysis of Solar Eclipses Across U.S. States in 2024"
 listing:
   contents: posts
   sort: "date desc"
