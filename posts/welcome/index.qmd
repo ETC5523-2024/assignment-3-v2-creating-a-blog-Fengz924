@@ -1,12 +1,151 @@
 ---
-title: "Welcome To My Blog Template"
-author: "Emi Tanaka"
-date: "2022-07-18"
+title: "Timing and Duration of Solar Eclipses Across U.S. States in 2024"
+author: "Feng Zhu"
+date: "2024-10-02"
 categories: [news]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+```{r, echo=FALSE, eval=TRUE, include=FALSE}
+# Load necessary libraries
+library(readr)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(ggmap)
+library(dplyr)
 
-![](thumbnail.jpg)
+# Read the data
+eclipse_data <- read_csv("eclipse_data_2023_2024.csv")
+```
+
+# What’s the Big Deal About Solar Eclipses?
+
+Imagine standing outside on a sunny day, only to see the sky gradually darken as the moon glides in front of the sun. The experience of a solar eclipse is one of the most awe-inspiring natural events that we can witness on Earth. And in 2024, the United States is in for a double treat: both an annular and a total solar eclipse will cross different regions of the country. But where should you be to get the best view? And when exactly will the eclipse unfold? This blog dives into the analysis I conducted on the timing and duration of these celestial events across various U.S. states, helping you plan for the perfect eclipse-viewing experience.
+
+## The Data Behind the Eclipses: Where Does It Come From?
+
+To explore the solar eclipses of 2024, I utilized a dataset a dataset provided by the [TidyTuesday project on GitHub](https://github.com/rfordatascience/tidytuesday) . This dataset is based on data from [NASA's Scientific Visualization Studio](https://svs.gsfc.nasa.gov/), a leading source of highly accurate astronomical information. The dataset includes key variables such as the geographical coordinates of eclipse locations, times of eclipse contact points (when the eclipse begins and ends), and the total duration of the event for each state.
+
+Before diving into the analysis, I conducted a quick ***review of the dataset*** and do a ***Data Preprocessing***. Fortunately, it was already clean and complete, with no missing values or problematic outliers. I did a basic format conversion of the dataset before analyzing it. For example, time data in HMS format can be accurately parsed into standard timestamps for subsequent analysis and visualization. Once that was done, I was ready to generate insightful visualizations.
+
+1.  ***Data Cleaning and Preprocessing***:After checking, the dataset has been cleaned alredy, and no missing values or outliers have been found. I did a basic format conversion of the dataset before analyzing it. For example, time data in HMS format can be accurately parsed into standard timestamps for subsequent analysis and visualization. 
 
 
+## Visualizing the Eclipses: Where and When to Catch the Best Views
+
+***Heatmap: Where Are the Eclipse Hotspots?***
+
+To help visualize where the eclipses will be most prominent across the U.S., I created a ***Heatmap***. This heatmap displays the density of solar eclipse events, with darker red areas representing regions with more intense eclipse activity. @fig-Heatmap below illustrates how the eclipse will track from the southwestern U.S. toward the northeast, with the most significant activity centered in the Midwest and South Central regions.
+
+```{r heatmap_plot, echo=FALSE, eval=TRUE, fig.align='center', warning=FALSE, message=FALSE, fig.height=3.5, fig.width=9}
+#| label: fig-Heatmap
+#| fig-cap: "Heatmap"
+#| eval: true
+# Stadia Maps API key
+ggmap::register_stadiamaps(key = "e99f0f1d-5be1-4759-a5d1-976455f731df", write = TRUE)
+
+# Use get_stadiamap() to retrieve the map with a valid maptype (e.g., "stamen_terrain")
+base_map <- get_stadiamap(
+  bbox = c(left = min(eclipse_data$lon) - 1, 
+           bottom = min(eclipse_data$lat) - 1,
+           right = max(eclipse_data$lon) + 1, 
+           top = max(eclipse_data$lat) + 1),
+  zoom = 5,
+  maptype = "stamen_terrain" 
+)
+
+# Plot the heatmap 
+ggmap(base_map) +
+  stat_density2d(data = eclipse_data, 
+                 aes(x = lon, y = lat, fill = ..level.., alpha = ..level..), 
+                 geom = "polygon") +
+  scale_fill_gradient(low = "blue", high = "red") +
+  labs(title = "Eclipse Locations Heatmap", x = "Longitude", y = "Latitude") +
+  theme_minimal() +
+  theme(legend.position = "right")
+```
+
+***Timeline Plot: When Will the Eclipse Happen?*** 
+
+Knowing when the eclipse will occur is just as important as knowing where. Using a ***Timeline Plot*** @fig-Timeline-Plot, I mapped out the different stages of the eclipse across U.S. states. The plot clearly illustrates how the timing of the eclipse varies by location.
+
+```{r, echo=FALSE, eval=TRUE, include=TRUE, warning=FALSE, message=FALSE}
+#| label: fig-Timeline-Plot
+#| fig-cap: "Timeline Plot"
+#| eval: true
+
+# Convert eclipse times to proper datetime format
+eclipse_data <- eclipse_data %>%
+  mutate(
+    eclipse_1 = as.POSIXct(eclipse_1, format = "%H:%M:%S", tz = "UTC"),
+    eclipse_2 = as.POSIXct(eclipse_2, format = "%H:%M:%S", tz = "UTC"),
+    eclipse_3 = as.POSIXct(eclipse_3, format = "%H:%M:%S", tz = "UTC"),
+    eclipse_4 = as.POSIXct(eclipse_4, format = "%H:%M:%S", tz = "UTC"),
+    eclipse_5 = as.POSIXct(eclipse_5, format = "%H:%M:%S", tz = "UTC"),
+    eclipse_6 = as.POSIXct(eclipse_6, format = "%H:%M:%S", tz = "UTC")
+  )
+
+# Reshape data to long format for easier plotting
+eclipse_long <- eclipse_data %>%
+  pivot_longer(cols = starts_with("eclipse_"), names_to = "stage", values_to = "time")
+
+# Create a timeline plot of eclipse stages across states
+ggplot(eclipse_long, aes(x = time, y = state, color = stage)) +
+  geom_line(aes(group = state), size = 1) +
+  geom_point(size = 2) +
+  labs(title = "Timeline Plot of Eclipse Stages Across States",
+       x = "Time (UTC)",
+       y = "State",
+       color = "Eclipse Stage") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 8))
+
+```
+
+
+***Data Description @tbl-variable_names***：
+
+```{r, echo=FALSE, eval=TRUE, include=TRUE, warning=FALSE, message=FALSE}
+#| label: tbl-variable_names
+#| tbl-cap: Data Description for the Eclipse Dataset
+library(knitr)
+data_dictionary <- data.frame(
+  Variables = c("state", "name", "lat", "lon", "eclipse_1", 
+                  "eclipse_2", "eclipse_3", "eclipse_4", 
+                  "eclipse_5", "eclipse_6", "duration", "Type"),
+ 
+  Description = c("The U.S. state where the observation was made.",
+                  "Name of the location where the eclipse was observed.",
+                  "Latitude of the location (in decimal degrees).",
+                  "Longitude of the location (in decimal degrees).",
+                  "Time of the first eclipse contact (in HH:MM:SS format).",
+                  "Time of the second eclipse contact (in HH:MM:SS format).",
+                  "Time of the third eclipse contact (in HH:MM:SS format).",
+                  "Time of the fourth eclipse contact (in HH:MM:SS format).",
+                  "Time of the fifth eclipse contact (in HH:MM:SS format).",
+                  "Time of the sixth eclipse contact (in HH:MM:SS format).",
+                  "Total duration of the eclipse event (in seconds).",
+                  "The year of the eclipse (e.g., 'Annular 2024', 'Total 2024').")
+)
+
+# Print the data dictionary
+kable(data_dictionary, col.names = c("Variables", "Description"))
+
+```
+
+# What Did We Learn? 
+The analysis reveals significant differences in the timing and duration of solar eclipses across the United States. Central regions, particularly the Midwest and South Central states, will experience longer and more intense phases of both the annular and total eclipses. These regions provide the most exciting viewing opportunities, with the longest durations offering plenty of time to observe this celestial wonder. Additionally, this research highlights the value of combining data visualization with geographical data to provide practical insights to the public. The heatmap and timeline plot offer an easy-to-understand snapshot of when and where the eclipses will occur.
+
+# What’s Next?
+This analysis gives a solid overview of where and when solar eclipses will be visible in the U.S. during 2024, along with how long each phase will last. But this is just the beginning! There’s still much to explore, such as how these eclipses might impact the environment, including temperature shifts and effects on wildlife. Stay tuned for more on that in future studies.
+
+
+
+# References
+1. Harmon, J. (2024) Github. Available at: https://github.com/rfordatascience/tidytuesday/tree/master/data/2024/2024-04-09 (Accessed: 02 September 2024). 
+
+2. Types of solar eclipses - NASA science (no date) NASA. Available at: https://science.nasa.gov/eclipses/types/ (Accessed: 03 September 2024). 
+
+3. Wikipedia contributors. (2024, September 5). Solar eclipse. Wikipedia, The Free Encyclopedia. https://en.wikipedia.org/wiki/Solar_eclipse
+
+4. Bressler, N. M. (2024). Safely viewing a solar eclipse. JAMA Ophthalmology, 142(4), 377. https://doi.org/10.1001/jamaophthalmol.2024.0401

@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Emi Tanaka">
-<meta name="dcterms.date" content="2022-07-18">
+<meta name="author" content="Feng Zhu">
+<meta name="dcterms.date" content="2024-10-02">
 
-<title>blog-template - Welcome To My Blog Template</title>
+<title>Timing and Duration Analysis of Solar Eclipses Across U.S. States in 2024 - Timing and Duration of Solar Eclipses Across U.S. States in 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">blog-template</span>
+    <span class="navbar-title">Timing and Duration Analysis of Solar Eclipses Across U.S. States in 2024</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">Jordan Zhu</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/Fengz924"> <i class="bi bi-github" role="img">
@@ -110,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome To My Blog Template</h1>
+      <h1 class="title">Timing and Duration of Solar Eclipses Across U.S. States in 2024</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">news</div>
               </div>
@@ -123,14 +123,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Emi Tanaka </p>
+               <p>Feng Zhu </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 18, 2022</p>
+        <p class="date">October 2, 2024</p>
       </div>
     </div>
     
@@ -149,10 +149,148 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="thumbnail.jpg" class="img-fluid"></p>
+<section id="whats-the-big-deal-about-solar-eclipses" class="level1">
+<h1>What’s the Big Deal About Solar Eclipses?</h1>
+<p>Imagine standing outside on a sunny day, only to see the sky gradually darken as the moon glides in front of the sun. The experience of a solar eclipse is one of the most awe-inspiring natural events that we can witness on Earth. And in 2024, the United States is in for a double treat: both an annular and a total solar eclipse will cross different regions of the country. But where should you be to get the best view? And when exactly will the eclipse unfold? This blog dives into the analysis I conducted on the timing and duration of these celestial events across various U.S. states, helping you plan for the perfect eclipse-viewing experience.</p>
+<section id="the-data-behind-the-eclipses-where-does-it-come-from" class="level2">
+<h2 class="anchored" data-anchor-id="the-data-behind-the-eclipses-where-does-it-come-from">The Data Behind the Eclipses: Where Does It Come From?</h2>
+<p>To explore the solar eclipses of 2024, I utilized a dataset a dataset provided by the <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday project on GitHub</a> . This dataset is based on data from <a href="https://svs.gsfc.nasa.gov/">NASA’s Scientific Visualization Studio</a>, a leading source of highly accurate astronomical information. The dataset includes key variables such as the geographical coordinates of eclipse locations, times of eclipse contact points (when the eclipse begins and ends), and the total duration of the event for each state.</p>
+<p>Before diving into the analysis, I conducted a quick <strong><em>review of the dataset</em></strong> and do a <strong><em>Data Preprocessing</em></strong>. Fortunately, it was already clean and complete, with no missing values or problematic outliers. I did a basic format conversion of the dataset before analyzing it. For example, time data in HMS format can be accurately parsed into standard timestamps for subsequent analysis and visualization. Once that was done, I was ready to generate insightful visualizations.</p>
+<ol type="1">
+<li><strong><em>Data Cleaning and Preprocessing</em></strong>:After checking, the dataset has been cleaned alredy, and no missing values or outliers have been found. I did a basic format conversion of the dataset before analyzing it. For example, time data in HMS format can be accurately parsed into standard timestamps for subsequent analysis and visualization.</li>
+</ol>
+</section>
+<section id="visualizing-the-eclipses-where-and-when-to-catch-the-best-views" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-the-eclipses-where-and-when-to-catch-the-best-views">Visualizing the Eclipses: Where and When to Catch the Best Views</h2>
+<p><strong><em>Heatmap: Where Are the Eclipse Hotspots?</em></strong></p>
+<p>To help visualize where the eclipses will be most prominent across the U.S., I created a <strong><em>Heatmap</em></strong>. This heatmap displays the density of solar eclipse events, with darker red areas representing regions with more intense eclipse activity. <a href="#fig-Heatmap" class="quarto-xref">Figure&nbsp;1</a> below illustrates how the eclipse will track from the southwestern U.S. toward the northeast, with the most significant activity centered in the Midwest and South Central regions.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-Heatmap" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-Heatmap-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Heatmap
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong><em>Timeline Plot: When Will the Eclipse Happen?</em></strong></p>
+<p>Knowing when the eclipse will occur is just as important as knowing where. Using a <strong><em>Timeline Plot</em></strong> <a href="#fig-Timeline-Plot" class="quarto-xref">Figure&nbsp;2</a>, I mapped out the different stages of the eclipse across U.S. states. The plot clearly illustrates how the timing of the eclipse varies by location.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-Timeline-Plot" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Timeline-Plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-Timeline-Plot-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Timeline-Plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Timeline Plot
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong><em>Data Description <a href="#tbl-variable_names" class="quarto-xref">Table&nbsp;1</a></em></strong>：</p>
+<div class="cell">
+<div id="tbl-variable_names" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-variable_names-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Data Description for the Eclipse Dataset
+</figcaption>
+<div aria-describedby="tbl-variable_names-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variables</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">The U.S. state where the observation was made.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">Name of the location where the eclipse was observed.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lat</td>
+<td style="text-align: left;">Latitude of the location (in decimal degrees).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">lon</td>
+<td style="text-align: left;">Longitude of the location (in decimal degrees).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">eclipse_1</td>
+<td style="text-align: left;">Time of the first eclipse contact (in HH:MM:SS format).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">eclipse_2</td>
+<td style="text-align: left;">Time of the second eclipse contact (in HH:MM:SS format).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">eclipse_3</td>
+<td style="text-align: left;">Time of the third eclipse contact (in HH:MM:SS format).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">eclipse_4</td>
+<td style="text-align: left;">Time of the fourth eclipse contact (in HH:MM:SS format).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">eclipse_5</td>
+<td style="text-align: left;">Time of the fifth eclipse contact (in HH:MM:SS format).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">eclipse_6</td>
+<td style="text-align: left;">Time of the sixth eclipse contact (in HH:MM:SS format).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">duration</td>
+<td style="text-align: left;">Total duration of the eclipse event (in seconds).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Type</td>
+<td style="text-align: left;">The year of the eclipse (e.g., ‘Annular 2024’, ‘Total 2024’).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section id="what-did-we-learn" class="level1">
+<h1>What Did We Learn?</h1>
+<p>The analysis reveals significant differences in the timing and duration of solar eclipses across the United States. Central regions, particularly the Midwest and South Central states, will experience longer and more intense phases of both the annular and total eclipses. These regions provide the most exciting viewing opportunities, with the longest durations offering plenty of time to observe this celestial wonder. Additionally, this research highlights the value of combining data visualization with geographical data to provide practical insights to the public. The heatmap and timeline plot offer an easy-to-understand snapshot of when and where the eclipses will occur.</p>
+</section>
+<section id="whats-next" class="level1">
+<h1>What’s Next?</h1>
+<p>This analysis gives a solid overview of where and when solar eclipses will be visible in the U.S. during 2024, along with how long each phase will last. But this is just the beginning! There’s still much to explore, such as how these eclipses might impact the environment, including temperature shifts and effects on wildlife. Stay tuned for more on that in future studies.</p>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<ol type="1">
+<li><p>Harmon, J. (2024) Github. Available at: https://github.com/rfordatascience/tidytuesday/tree/master/data/2024/2024-04-09 (Accessed: 02 September 2024).</p></li>
+<li><p>Types of solar eclipses - NASA science (no date) NASA. Available at: https://science.nasa.gov/eclipses/types/ (Accessed: 03 September 2024).</p></li>
+<li><p>Wikipedia contributors. (2024, September 5). Solar eclipse. Wikipedia, The Free Encyclopedia. https://en.wikipedia.org/wiki/Solar_eclipse</p></li>
+<li><p>Bressler, N. M. (2024). Safely viewing a solar eclipse. JAMA Ophthalmology, 142(4), 377. https://doi.org/10.1001/jamaophthalmol.2024.0401</p></li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
