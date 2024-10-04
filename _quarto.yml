@@ -12,9 +12,8 @@ website:
       - icon: linkedin
         href: https://www.linkedin.com/in/feng-zhu-a79a73267/
 
-
 format:
   html:
-    theme:
-      light: ["#f8f9fa", "#f8f9fa"]
+    theme: flatly
     css: styles.css
+
