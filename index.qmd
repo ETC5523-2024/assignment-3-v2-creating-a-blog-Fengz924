@@ -1,11 +1,11 @@
 ---
-title: "Timing and Duration Analysis of Solar Eclipses Across U.S. States in 2024"
+title: "Jordan’s Blog✌️🤪😎"
 listing:
   contents: posts
   sort: "date desc"
   type: default
   categories: true
-  sort-ui: false
+  sort-ui: true
   filter-ui: false
 page-layout: full
 title-block-banner: true

@@ -2,7 +2,7 @@
 title: "Timing and Duration of Solar Eclipses Across U.S. States in 2024"
 author: "Feng Zhu"
 date: "2024-10-02"
-categories: [news]
+categories: [Astronomy]
 ---
 
 ```{r, echo=FALSE, eval=TRUE, include=FALSE}

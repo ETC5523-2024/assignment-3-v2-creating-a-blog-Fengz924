@@ -2,16 +2,23 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "Jordan Zhu",
+    "title": "About",
     "section": "",
     "text": "I am currently a first-year Master’s student in Business Analytics at Monash University. With a solid foundation in data analysis, I am passionate about leveraging data to solve complex business problems and optimize decision-making processes.\nIn addition to my studies, I enjoy exploring the latest trends in technology and data science. I am particularly interested in how data analytics can drive innovation in various industries.\nOutside of academics, I love hiking and exploring nature, which provides me with a fresh perspective and inspires my creativity. Photography is another passion of mine; I enjoy capturing the beauty of landscapes and urban environments. Additionally, I have a deep appreciation for diverse cultures, and I love trying out new cuisines, which allows me to connect with people from different backgrounds and learn about their traditions."
   },
   {
     "objectID": "about.html#contact",
     "href": "about.html#contact",
-    "title": "Jordan Zhu",
+    "title": "About",
     "section": "Contact",
     "text": "Contact\n\n\n\n\nFengZhu\n\n\n\n\n\nfzhu0011@student.monash.edu\n\n\n\nMonash University29 Ancora Imparo WayClayton, VIC 3800Australia"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jordan’s Blog✌️🤪🤓",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\nTiming and Duration of Solar Eclipses Across U.S. States in 2024\n\n\n\n\n\n\nAstronomy\n\n\n\n\n\n\n\n\n\nOct 2, 2024\n\n\nFeng Zhu\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -33,12 +40,5 @@
     "title": "Timing and Duration of Solar Eclipses Across U.S. States in 2024",
     "section": "",
     "text": "Heatmap: Where Are the Eclipse Hotspots?\nTo help visualize where the eclipses will be most prominent across the U.S., I created a Heatmap. This heatmap displays the density of solar eclipse events, with darker red areas representing regions with more intense eclipse activity. Figure 1 below illustrates how the eclipse will track from the southwestern U.S. toward the northeast, with the most significant activity centered in the Midwest and South Central regions.\n\n\n\n\n\n\n\n\nFigure 1: Heatmap\n\n\n\n\n\nTimeline Plot: When Will the Eclipse Happen?\nKnowing when the eclipse will occur is just as important as knowing where. Using a Timeline Plot Figure 2, I mapped out the different stages of the eclipse across U.S. states. The plot clearly illustrates how the timing of the eclipse varies by location.\n\n\n\n\n\n\n\n\nFigure 2: Timeline Plot\n\n\n\n\n\nData Description Table 1：\n\n\n\n\nTable 1: Data Description for the Eclipse Dataset\n\n\n\n\n\n\n\n\n\n\nVariables\nDescription\n\n\n\n\nstate\nThe U.S. state where the observation was made.\n\n\nname\nName of the location where the eclipse was observed.\n\n\nlat\nLatitude of the location (in decimal degrees).\n\n\nlon\nLongitude of the location (in decimal degrees).\n\n\neclipse_1\nTime of the first eclipse contact (in HH:MM:SS format).\n\n\neclipse_2\nTime of the second eclipse contact (in HH:MM:SS format).\n\n\neclipse_3\nTime of the third eclipse contact (in HH:MM:SS format).\n\n\neclipse_4\nTime of the fourth eclipse contact (in HH:MM:SS format).\n\n\neclipse_5\nTime of the fifth eclipse contact (in HH:MM:SS format).\n\n\neclipse_6\nTime of the sixth eclipse contact (in HH:MM:SS format).\n\n\nduration\nTotal duration of the eclipse event (in seconds).\n\n\nType\nThe year of the eclipse (e.g., ‘Annular 2024’, ‘Total 2024’)."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Timing and Duration Analysis of Solar Eclipses Across U.S. States in 2024",
-    "section": "",
-    "text": "Timing and Duration of Solar Eclipses Across U.S. States in 2024\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 2, 2024\n\n\nFeng Zhu\n\n\n\n\n\n\nNo matching items"
   }
 ]
